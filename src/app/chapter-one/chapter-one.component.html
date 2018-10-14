@@ -1,0 +1,73 @@
+<b>Chapter-One/Component-One</b>
+<br><br>
+<ul>
+	<li><span class="title_1_style"><b>Lesson One: Basic on Component</b></span> 
+		<ul>
+			<li>How to create a component</li>
+			<li>How to attach newly created component with main App by using their selector (as element/attribute/class)</li>
+			<li>How to design its element(s) using their own css file (styleUrls [list of css files]/<span class="item_1_style">styles(inline)</span>)</li>
+		</ul>
+	</li>
+	<br>
+	<li><span class="title_1_style"><b>Lesson Two: Databinding - Communication between TS code (Business Logic) and HTML (Template)</b></span> 
+		<ul>
+			<li>Output Data: From TS code to HTML</li>
+			<ul>
+				<li>
+					String Interpolation: {{ <em>data</em> }}<br>
+					Example-1: {{message_one}}<br>
+					Example-2: {{getMessage()}}
+				</li>
+				<br>
+				<li>
+					Property Binding: [property]="data"
+					<br>
+					Note: [...] indicates to Angular that we are using property binding that we want to dynamically bind a property of current element.
+					<br><br>
+					Example:
+					<button class="btn btn-success btn-sm" [disabled]="property_bind">Angular</button> (This button will be active in 5 second due to property buinding)
+					<br><br>
+				</li>
+			</ul>
+			<li>React to user events: From HTML to TS code</li>
+			<ul>
+				<li>
+					Event Binding: (event) = "expression"
+					<br>
+					Note: (...), through this we are trigering an event (can be button click, keyUp, etc.,) in Angular.
+					<br><br>
+					Example-1:&nbsp;
+					<button class="btn btn-primary btn-sm" (click)="showNewMsg()">Show new message</button>
+					&nbsp;&nbsp;&nbsp; >> {{show_message}}
+					<br><br>
+					Example-2:&nbsp;
+					<input type="text" name="event_binding" (blur)="passMsgOnEvent($event.target.value)"> (on blur, pass information)
+					&nbsp;&nbsp; {{enteredMessage}}
+					<br><br>
+				</li>
+			</ul>
+			<li>React to user events and output data at the same time</li>
+			<ul>
+				<li>
+					Two-Way-Binding: [(ngModel)] = "data"
+					<br>
+					Example:&nbsp;
+					<input type="text" [(ngModel)]="message_three">
+					&nbsp;
+					Your entered data will appear while typing > {{message_three}}
+				</li>
+			</ul>
+		</ul>
+	</li>
+</ul>
+<br>
+<b>Extra information related to other Component(s):</b>
+<br>
+Show Message (Component-Two, Method-2): {{messageFromComponentTwo}}<br>
+Show Message (Component-Two, Method-3): {{viewChildMessage}}<br>
+Show Message (Component-Two, Method-4): {{sharedMessage}}&nbsp;&nbsp; 
+<button class="btn btn-primary btn-sm" (click)="newMessage()">Broadcast new message</button>
+
+<hr>
+<!-- Nested Components: Component inside another Component (L-3, M-1) -->
+<app-chapter-two [messageFromParent]="messageForComponentTwo" (messageEvent)="receiveMessage($event)"></app-chapter-two>

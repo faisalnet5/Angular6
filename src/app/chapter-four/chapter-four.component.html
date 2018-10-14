@@ -1,0 +1,38 @@
+<b>Chapter-Four/Component-Four</b>
+<br><br>
+<ul>
+	<li>
+		<span class="title_3_style"><b>Lesson Seven: Understanding Observables</b></span> 
+	</li>
+	<ul>
+		<li>
+			How Observable pattern works?
+		</li>
+		<li>
+			Example through 'HttpClient' package which supports Observable API (Bonus: How to use Pipes)<br><br>
+			
+			<div class="col-md-11">
+				<table class="table">
+					<thead>
+						<tr>
+					      <th scope="col">Title</th>
+					      <th scope="col">Author</th>
+					      <th scope="col">Publisher</th>
+					      <th scope="col">Published Date</th>
+					    </tr>
+					</thead>
+					<tbody>
+						<tr *ngFor="let element of booksInfo">
+							<td>{{element.title}} <sub>(ISBN: {{element.isbn}})</sub></td>
+							<td>{{element.author}}</td>
+							<td>{{element.publisher}}</td>
+							<td>{{element.published | date :'longDate'}}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</li>
+
+	</ul>
+</ul>
+<hr>

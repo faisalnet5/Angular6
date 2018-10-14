@@ -1,0 +1,44 @@
+<b>Chapter-Two/Component-Two</b>
+<br><br>
+<ul>
+	<li>
+		<span class="title_2_style"><b>Lesson Three: Sharing data between components</b></span> 
+		<ul>
+			<li>Method-1: Passing data from Component-One (Parent) to Component-Two (Child) by @Input decorator</li>
+
+			Note: To flow information from Parent to Child, we will declear a variable with @input decorator in child component, which will allow that variable to be recieved from the parent component template.
+			<br><br>
+			Example: {{messageFromParent}} (without Alias)
+
+		</ul>
+		<br>
+		<ul>
+			<li>
+				Method-2: Passing data from Component-Two (Child) to Component-One (Parent) by @Output decorator & EventEmitter
+			</li>
+			<br>
+			Example:&nbsp;&nbsp;
+			<button class="btn btn-primary btn-sm" (click)="sendMessage()">Send message to Component-One</button>
+
+		</ul>
+		<br>
+		<ul>
+			<li>
+				Method-3: Passing data from Component-One (Parent) to Component-Two (Child) via ViewChild()
+			</li>
+			Note: ViewChild allows one component to be injected into another giving the parent access to all of its (child's) attributes and functions.
+		</ul>
+		<br>
+		<ul>
+			<li>
+				Method-4: Share & Broadcast data between any unrelated components (By using shared Service)
+			</li>
+			Note: When you have data that always needs to be insyncd, BehaviorSubject from rxjs is very useful
+		</ul>
+	</li>
+</ul>
+<b>Extra information related to other Component(s):</b>
+<br>
+Show Message (Component-Two, Method-4): {{sharedMessage}} &nbsp;&nbsp; 
+<button class="btn btn-primary btn-sm" (click)="newMessage()">Broadcast new message</button>
+<hr>
